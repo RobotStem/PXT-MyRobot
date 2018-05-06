@@ -278,43 +278,43 @@ namespace MyRoboStem {
     export function servoDEGREE(indexSV: Servo, degree: number): void {
 	switch (indexSV) {
             case Servo.Servo0:
-	        pins.servoWritePin(AnalogPin.P0, Degree)
+	        pins.servoWritePin(AnalogPin.P0, degree)
 		break
             case Servo.Servo1:
-	        pins.servoWritePin(AnalogPin.P1, Degree)
+	        pins.servoWritePin(AnalogPin.P1, degree)
 		break
             case Servo.Servo2:
-	        pins.servoWritePin(AnalogPin.P2, Degree)
+	        pins.servoWritePin(AnalogPin.P2, degree)
 		break
             case Servo.Servo3:
-	        pins.servoWritePin(AnalogPin.P3, Degree)
+	        pins.servoWritePin(AnalogPin.P3, degree)
 		break
             case Servo.Servo4:
-	        pins.servoWritePin(AnalogPin.P4, Degree)
+	        pins.servoWritePin(AnalogPin.P4, degree)
 		break
 	    case Servo.Servo10:
-	        pins.servoWritePin(AnalogPin.P10, Degree)
+	        pins.servoWritePin(AnalogPin.P10, degree)
 		break
             case Servo.Servo5:
-	        pins.servoWritePin(AnalogPin.P5, Degree)
+	        pins.servoWritePin(AnalogPin.P5, degree)
 		break
             case Servo.Servo6:
-	        pins.servoWritePin(AnalogPin.P6, Degree)
+	        pins.servoWritePin(AnalogPin.P6, degree)
 		break
             case Servo.Servo7:
-	        pins.servoWritePin(AnalogPin.P7, Degree)
+	        pins.servoWritePin(AnalogPin.P7, degree)
 		break
             case Servo.Servo8:
-	        pins.servoWritePin(AnalogPin.P8, Degree)
+	        pins.servoWritePin(AnalogPin.P8, degree)
 		break
             case Servo.Servo9:
-	        pins.servoWritePin(AnalogPin.P9, Degree)
+	        pins.servoWritePin(AnalogPin.P9, degree)
 		break
             case Servo.Servo11:
-	        pins.servoWritePin(AnalogPin.P11, Degree)
+	        pins.servoWritePin(AnalogPin.P11, degree)
 		break
             case Servo.Servo12:
-	        pins.servoWritePin(AnalogPin.P12, Degree)
+	        pins.servoWritePin(AnalogPin.P12, degree)
 		break
 	}
     }
