@@ -9,13 +9,13 @@ namespace MyRoboStem {
 	* Robot<>Stem<>Project<>micro:bit 
 	************************************************************************************************************************************************/
     export enum Motors {
-        //% blockId=RoboBit_motor_A
+        //% blockId=MyRobotBit_motor_A
         //% block="motor A"
         MotorA,
-        //% blockId=RoboBit_motor_B
+        //% blockId=MyRobotBit_motor_B
         //% block="motor B"
         MotorB,
-        //% blockId=RoboBit_motor_AB
+        //% blockId=MyRobotBit_motor_AB
         //% block="motor AB"
         MotorAB
     }
@@ -62,8 +62,8 @@ namespace MyRoboStem {
 	 * @param dir   which direction to go
 	 * @param speed which slow/fast to spin the motor, eg:50
      */
-    //% subcategory=RoboBit
-    //% blockId=RoboBit_motor_on
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_motor_on
     //% block="%motor|direction %dir|speed %speed"
     //% speed.min=0 speed.max=100
     export function motorOn(motor: Motors, dir: MotorDirection, speed: number): void {
@@ -116,8 +116,8 @@ namespace MyRoboStem {
      * Turns off the motor
      * @param motor which motor to turn off
      */
-    //% subcategory=RoboBit
-    //% blockId=RoboBit_motor_off
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_motor_off
     //% block="%motor|Stop %StopMode|mode"
     export function motorOFF(motor: Motors, stop: StopMode): void {
         switch (motor) {
@@ -169,8 +169,8 @@ namespace MyRoboStem {
 	 * @param speed speed of motor; eg: 50
 	 * @param delay seconde delay to stop; eg: 1
 	*/
-    //% subcategory=RoboBit
-    //% blockId=RoboBit_rotateDelay block="rotate|%index|speed %speed|delay %delay|sec"
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_rotateDelay block="rotate|%index|speed %speed|delay %delay|sec"
     //% speed.min=0 speed.max=100
     //% delay.min=0 delay.max=10
     export function RotateDelay(index: Rotated, speed: number, delay: number): void {
@@ -198,8 +198,8 @@ namespace MyRoboStem {
 	 * @param speed speed of motor; eg: 50
 	 * @param pausems milliseconde delay to stop; eg: 400
 	*/
-    //% subcategory=RoboBit
-    //% blockId=RoboBit_rotatePAUSE block="rotate|%index|speed %speed|pause %pause|mS"
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_rotatePAUSE block="rotate|%index|speed %speed|pause %pause|mS"
     //% speed.min=0 speed.max=100
     export function RotatePAUSE(index: RotatedmS, speed: number, pausems: number): void {
       let motorspeed = pins.map(speed,0,100,0,1023)      
@@ -225,8 +225,8 @@ namespace MyRoboStem {
 	 * @param indexfl Turn Index Left or Right
 	 * @param speed speed of motor; eg: 40
 	*/
-    //% subcategory=RoboBit
-    //% blockId=RoboBit_followlineTurn block="turn|%index|speed %speed"
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_followlineTurn block="turn|%index|speed %speed"
     //% speed.min=0 speed.max=100
     export function followlineTurn(indexfl: Turn, speed: number): void {
       let motorspeed = pins.map(speed,0,100,0,1023)      
@@ -246,9 +246,9 @@ namespace MyRoboStem {
 	 * Execute puase time
 	 * @param pausetime  mSec number  to elay; eg: 100
 	*/
-    //% subcategory=RoboBit
+    //% subcategory=MyRobotBit
     //% pausetime.min=1 pausetime.max=10000
-    //% blockId=RoboBit_TimePAUSE block="pause|%pausetime|mSec"
+    //% blockId=MyRobotBit_TimePAUSE block="pause|%pausetime|mSec"
     export function TimePAUSE(pausetime: number): void {
 		basic.pause(pausetime)
 		break
@@ -258,9 +258,9 @@ namespace MyRoboStem {
 	 * Execute delay time
 	 * @param delaytime   Seconde number to delay; eg: 1
 	*/
-    //% subcategory=RoboBit
+    //% subcategory=MyRobotBit
     //% delaytime.min=1 delaytime.max=10
-    //% blockId=RoboBit_TimeDELAY block="delay|%delaytime|Sec"
+    //% blockId=MyRobotBit_TimeDELAY block="delay|%delaytime|Sec"
     export function TimeDELAY(delaytime: number): void {
 		basic.pause(delaytime*1000)
 		break
