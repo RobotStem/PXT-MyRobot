@@ -23,6 +23,13 @@ namespace MyRoboStem {
         Reverse
     }
 
+    export enum StopMode {
+        //% block="brake"
+        Brake,
+        //% block="coast"
+        Coast
+    }
+
      /**	
      * Turns on motor, forward, reverse at the requested speed 
      *
@@ -79,5 +86,57 @@ namespace MyRoboStem {
                 break;
         }
     }
+
+    /**
+     * Turns off the motor
+     * @param motor which motor to turn off
+     */
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_motor_off
+    //% block="%motor|Stop %StopMode|mode"
+    export function motorOFF(motor: Motors, stop: StopMode): void {
+        switch (motor) {
+            case Motors.MotorAB:
+                switch (stop) {
+                    case StopMode.Brake:
+			pins.digitalWritePin(DigitalPin.P13, 1);
+		        pins.digitalWritePin(DigitalPin.P14, 1);
+			pins.digitalWritePin(DigitalPin.P15, 1);
+		        pins.digitalWritePin(DigitalPin.P16, 1);
+			break
+                    case StopMode.Coast:
+			pins.digitalWritePin(DigitalPin.P13, 0);
+		        pins.digitalWritePin(DigitalPin.P14, 0);
+			pins.digitalWritePin(DigitalPin.P15, 0);
+		        pins.digitalWritePin(DigitalPin.P16, 0);
+			break
+                }
+                break;
+            case Motors.MotorA:
+                switch (stop) {
+                    case StopMode.Brake:
+			pins.digitalWritePin(DigitalPin.P13, 1);
+		        pins.digitalWritePin(DigitalPin.P14, 1);
+                        break
+                    case StopMode.Coast:
+			pins.digitalWritePin(DigitalPin.P13, 0);
+		        pins.digitalWritePin(DigitalPin.P14, 0);
+                        break
+                }
+                break;
+            case Motors.MotorB:
+                switch (stop) {
+                    case StopMode.Brake:
+			pins.digitalWritePin(DigitalPin.P15, 1);
+		        pins.digitalWritePin(DigitalPin.P16, 1);
+                        break
+                    case StopMode.Coast:
+			pins.digitalWritePin(DigitalPin.P15, 0);
+		        pins.digitalWritePin(DigitalPin.P16, 0);
+                        break
+                }
+	}
+    }
+
 
 }
