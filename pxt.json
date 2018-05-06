@@ -1,7 +1,7 @@
 {
     "name": "MyRobotBit",
     "version": "1.1.0",
-    "description": "MyRobot.Bit package for pxt-microbit",
+    "description": "MyRobotBit package for pxt-microbit",
     "license": "MIT",
     "dependencies": {
         "core": "*"        
