@@ -51,6 +51,35 @@ namespace MyRoboStem {
         Right
     }
 
+   export enum Servo {
+	//% block="0"
+	Servo0,
+	//% block="1"
+	Servo1,
+	//% block="2"
+	Servo2,
+	//% block="3"
+	Servo3,
+	//% block="4"
+	Servo4,
+	//% block="10"
+	Servo10,
+	//% block="5"
+	Servo5,
+	//% block="6"
+	Servo6,
+	//% block="7"
+	Servo7,
+	//% block="8"
+	Servo8,
+	//% block="9"
+	Servo9,
+	//% block="11"
+	Servo11,
+	//% block="12"
+	Servo12
+    }
+
      /**	
      * Turns on motor, forward, reverse at the requested speed 
      *
@@ -236,6 +265,58 @@ namespace MyRoboStem {
 		MyRoboStem.motorOn(MyRoboStem.Motors.MotorB, MyRoboStem.MotorDirection.Forward, 0)
 		break
         }
+    }
+
+    /**
+     * Control Servo GPIO0 to GPIO12 degree 0 - 180
+     * @param indexSV  Select servo number to control
+     * @param degree   Servo degree 0-180, eg: 90
+     */
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_servoDEGREE block="servo|%indexSV|degree %degree"
+    //% degree.min=0 degree.max=180
+    export function servoDEGREE(indexSV: Servo, degree: number): void {
+	switch (indexSV) {
+            case Servo.Servo0:
+	        pins.servoWritePin(AnalogPin.P0, Degree)
+		break
+            case Servo.Servo1:
+	        pins.servoWritePin(AnalogPin.P1, Degree)
+		break
+            case Servo.Servo2:
+	        pins.servoWritePin(AnalogPin.P2, Degree)
+		break
+            case Servo.Servo3:
+	        pins.servoWritePin(AnalogPin.P3, Degree)
+		break
+            case Servo.Servo4:
+	        pins.servoWritePin(AnalogPin.P4, Degree)
+		break
+	    case Servo.Servo10:
+	        pins.servoWritePin(AnalogPin.P10, Degree)
+		break
+            case Servo.Servo5:
+	        pins.servoWritePin(AnalogPin.P5, Degree)
+		break
+            case Servo.Servo6:
+	        pins.servoWritePin(AnalogPin.P6, Degree)
+		break
+            case Servo.Servo7:
+	        pins.servoWritePin(AnalogPin.P7, Degree)
+		break
+            case Servo.Servo8:
+	        pins.servoWritePin(AnalogPin.P8, Degree)
+		break
+            case Servo.Servo9:
+	        pins.servoWritePin(AnalogPin.P9, Degree)
+		break
+            case Servo.Servo11:
+	        pins.servoWritePin(AnalogPin.P11, Degree)
+		break
+            case Servo.Servo12:
+	        pins.servoWritePin(AnalogPin.P12, Degree)
+		break
+	}
     }
 
 
