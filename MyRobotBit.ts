@@ -80,6 +80,21 @@ namespace MyRoboStem {
 	Servo12
     }
 
+   export enum Servo360 {
+	//% block="0"
+	Servo0,
+	//% block="1"
+	Servo1,
+	//% block="2"
+	Servo2,
+	//% block="3"
+	Servo3,
+	//% block="4"
+	Servo4,
+	//% block="10"
+	Servo10
+    }
+
      /**	
      * Turns on motor, forward, reverse at the requested speed 
      *
@@ -390,5 +405,101 @@ namespace MyRoboStem {
 		break
 	}
     }
+
+   /**
+    * Servo 360 direction, with a speed from 0 to 100
+    * @param pin   Which pin the servo is on
+    * @param dir   which direction of servo
+    * @param speed Speed between 0 to 100, eg:50
+    */
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_servo360CON block="servo360|%pin direction|%dir speed|%speed"
+    export function servo360CON(pin: Servo360, dir: MotorDirection, speed: number): void {
+	switch (pin) {
+            case Servo360.Servo0):
+		switch (dir) {
+		    case Motordirection:Forward:
+			let speedforward = (speed * 90) / 100 + 90
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			let speedreverse = 90 - (speed * 90) / 100
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+		break;
+            case Servo360.Servo1):
+		switch (dir) {
+		    case Motordirection:Forward:
+			let speedforward = (speed * 90) / 100 + 90
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			let speedreverse = 90 - (speed * 90) / 100
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+		break;
+            case Servo360.Servo2):
+		switch (dir) {
+		    case Motordirection:Forward:
+			let speedforward = (speed * 90) / 100 + 90
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			let speedreverse = 90 - (speed * 90) / 100
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+		break;
+            case Servo360.Servo3):
+		switch (dir) {
+		    case Motordirection:Forward:
+			let speedforward = (speed * 90) / 100 + 90
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			let speedreverse = 90 - (speed * 90) / 100
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+		break;
+            case Servo360.Servo4):
+		switch (dir) {
+		    case Motordirection:Forward:
+			let speedforward = (speed * 90) / 100 + 90
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			let speedreverse = 90 - (speed * 90) / 100
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+		break;
+            case Servo360.Servo10):
+		switch (dir) {
+		    case Motordirection:Forward:
+			let speedforward = (speed * 90) / 100 + 90
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			let speedreverse = 90 - (speed * 90) / 100
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+		break;
+	}
+
+    /**
+    * Turns off the servo
+    * @param pin Which pin the servo is on
+    */
+    //% subcategory=MyRobotBit
+    //% blockId=MyRobotBit_servo360OFF block="servo360 turn off|%pin"
+    export function servo360OFF(pin: Servo360): void {
+	pins.digitalWritePin(pin, 0)
+      }
+  
+   }
 
 }
