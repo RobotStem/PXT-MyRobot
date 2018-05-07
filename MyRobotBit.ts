@@ -486,16 +486,7 @@ namespace MyRoboStem {
 		}
 	}
 
-    /**
-    * Turns off the servo
-    * @param pin Which pin the servo is on
-    */
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_servo360OFF block="servo360 turn off|%pin"
-    export function servo360OFF(pin: Servo360): void {
-	pins.digitalWritePin(pin, 0)
-      }
-  
+ 
    }
 
 }
