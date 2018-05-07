@@ -267,6 +267,31 @@ namespace MyRoboStem {
         }
     }
 
+	/**
+	 * Execute puase time
+	 * @param pausetime  mSec number  to elay; eg: 100
+	*/
+    //% subcategory=MyRobotBit
+    //% pausetime.min=1 pausetime.max=10000
+    //% blockId=MyRobotBit_TimePAUSE block="pause|%pausetime|mSec"
+    export function TimePAUSE(pausetime: number): void {
+		basic.pause(pausetime)
+		break
+        }
+
+	/**
+	 * Execute delay time
+	 * @param delaytime   Seconde number to delay; eg: 1
+	*/
+    //% subcategory=MyRobotBit
+    //% delaytime.min=1 delaytime.max=10
+    //% blockId=MyRobotBit_TimeDELAY block="delay|%delaytime|Sec"
+    export function TimeDELAY(delaytime: number): void {
+		basic.pause(delaytime*1000)
+		break
+        }
+
+
     /**
      * Control Servo GPIO0 to GPIO12 degree 0 - 180
      * @param indexSV  Select servo number to control
