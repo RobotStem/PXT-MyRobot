@@ -416,48 +416,42 @@ namespace MyRoboStem {
     //% blockId=MyRobotBit_servo360CON block="servo360 pin|%pin |direction %dir|speed %speed"
     //% speed.min=0 speed.max=100
     export function servo360CON(pin: Servo360, dir: MotorDirection, speed: number): void {
+	let speedforward = (speed * 90) / 100 + 90
+	let speedreverse = 90 - (speed * 90) / 100
 	switch (pin) {
             case Servo360.Servo0):
 		switch (dir) {
 		    case Motordirection:Forward:
-			let speedforward = (speed * 90) / 100 + 90
 			pins.servoWritePin(pin, speedforward)
 			break
 		    case Motordirection:Reverse:
-			let speedreverse = 90 - (speed * 90) / 100
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
             case Servo360.Servo1):
 		switch (dir) {
 		    case Motordirection:Forward:
-			let speedforward = (speed * 90) / 100 + 90
 			pins.servoWritePin(pin, speedforward)
 			break
 		    case Motordirection:Reverse:
-			let speedreverse = 90 - (speed * 90) / 100
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
             case Servo360.Servo2):
 		switch (dir) {
 		    case Motordirection:Forward:
-			let speedforward = (speed * 90) / 100 + 90
 			pins.servoWritePin(pin, speedforward)
 			break
 		    case Motordirection:Reverse:
-			let speedreverse = 90 - (speed * 90) / 100
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
             case Servo360.Servo3):
 		switch (dir) {
 		    case Motordirection:Forward:
-			let speedforward = (speed * 90) / 100 + 90
 			pins.servoWritePin(pin, speedforward)
 			break
 		    case Motordirection:Reverse:
-			let speedreverse = 90 - (speed * 90) / 100
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
@@ -465,22 +459,18 @@ namespace MyRoboStem {
             case Servo360.Servo4):
 		switch (dir) {
 		    case Motordirection:Forward:
-			let speedforward = (speed * 90) / 100 + 90
 			pins.servoWritePin(pin, speedforward)
 			break
 		    case Motordirection:Reverse:
-			let speedreverse = 90 - (speed * 90) / 100
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
             case Servo360.Servo10):
 		switch (dir) {
 		    case Motordirection:Forward:
-			let speedforward = (speed * 90) / 100 + 90
 			pins.servoWritePin(pin, speedforward)
 			break
 		    case Motordirection:Reverse:
-			let speedreverse = 90 - (speed * 90) / 100
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
