@@ -407,13 +407,14 @@ namespace MyRoboStem {
     }
 
    /**
-    * Servo 360 direction, with a speed from 0 to 100
+    * Servo360 direction, with a speed from 0 to 100
     * @param pin   Which pin the servo is on
     * @param dir   which direction of servo
     * @param speed Speed between 0 to 100, eg:50
     */
     //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_servo360CON block="servo360|%pin direction|%dir speed|%speed"
+    //% blockId=MyRobotBit_servo360CON block="servo360 pin|%pin |direction %dir|speed %speed"
+    //% speed.min=0 speed.max=100
     export function servo360CON(pin: Servo360, dir: MotorDirection, speed: number): void {
 	switch (pin) {
             case Servo360.Servo0):
@@ -427,7 +428,6 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-		break;
             case Servo360.Servo1):
 		switch (dir) {
 		    case Motordirection:Forward:
@@ -439,7 +439,6 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-		break;
             case Servo360.Servo2):
 		switch (dir) {
 		    case Motordirection:Forward:
@@ -451,7 +450,6 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-		break;
             case Servo360.Servo3):
 		switch (dir) {
 		    case Motordirection:Forward:
@@ -475,7 +473,6 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-		break;
             case Servo360.Servo10):
 		switch (dir) {
 		    case Motordirection:Forward:
@@ -487,7 +484,6 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-		break;
 	}
 
     /**
