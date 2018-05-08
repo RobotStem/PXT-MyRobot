@@ -416,10 +416,9 @@ namespace MyRoboStem {
     //% blockId=MyRobotBit_servo360CON block="servo360 pin|%pin |direction %dir|speed %speed"
     //% speed.min=0 speed.max=100
     export function servo360CON(pin: Servo360, dir: MotorDirection, speed: number): void {
-	let speedforward = (speed * 90) / 100 + 90
-	let speedreverse = 90 - (speed * 90) / 100
+	let speedforward = (speed * 90) / 100 + 90, speedreverse = 90 - (speed * 90) / 100
 	switch (pin) {
-            case Servo360.Servo0):
+            case Servo360.Servo0:
 		switch (dir) {
 		    case Motordirection:Forward:
 			pins.servoWritePin(pin, speedforward)
@@ -428,7 +427,7 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-            case Servo360.Servo1):
+            case Servo360.Servo1:
 		switch (dir) {
 		    case Motordirection:Forward:
 			pins.servoWritePin(pin, speedforward)
@@ -437,7 +436,7 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-            case Servo360.Servo2):
+            case Servo360.Servo2:
 		switch (dir) {
 		    case Motordirection:Forward:
 			pins.servoWritePin(pin, speedforward)
@@ -446,7 +445,7 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-            case Servo360.Servo3):
+            case Servo360.Servo3:
 		switch (dir) {
 		    case Motordirection:Forward:
 			pins.servoWritePin(pin, speedforward)
@@ -456,7 +455,7 @@ namespace MyRoboStem {
 			break
 		}
 		break;
-            case Servo360.Servo4):
+            case Servo360.Servo4:
 		switch (dir) {
 		    case Motordirection:Forward:
 			pins.servoWritePin(pin, speedforward)
@@ -465,7 +464,7 @@ namespace MyRoboStem {
 			pins.servoWritePin(pin, speedreverse)
 			break
 		}
-            case Servo360.Servo10):
+            case Servo360.Servo10:
 		switch (dir) {
 		    case Motordirection:Forward:
 			pins.servoWritePin(pin, speedforward)
