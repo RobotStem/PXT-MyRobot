@@ -309,8 +309,8 @@ namespace MyRobotBit {
      * @param indexSV  Select servo number to control
      * @param degree   Servo degree 0-180, eg: 90
      */
-    //% subcategory=Motor
-    //% blockId=Motor_servoDEGREE block="servo|%indexSV|degree %degree"
+    //% subcategory=Servo
+    //% blockId=Servo_servoDEGREE block="servo|%indexSV|degree %degree"
     //% degree.min=0 degree.max=180
     export function servoDEGREE(indexSV: Servo, degree: number): void {
 	switch (indexSV) {
@@ -360,8 +360,8 @@ namespace MyRobotBit {
      * Control Servo GPIO0 to GPIO12 to Stop
      * @param indexSVstop  Select servo number to control
      */
-    //% subcategory=Motor
-    //% blockId=Motor_servoSTOP block="servo stop|%indexSVstop"
+    //% subcategory=Servo
+    //% blockId=Servo_servoSTOP block="servo stop|%indexSVstop"
     export function servoSTOP(indexSVstop: Servo): void {
 	switch (indexSVstop) {
             case Servo.Servo0:
@@ -405,77 +405,5 @@ namespace MyRobotBit {
 		break
 	}
     }
-
-   /**
-    * Servo360 direction, with a speed from 0 to 100
-    * @param pin   Which pin the servo is on
-    * @param dir   which direction of servo
-    * @param speed Speed between 0 to 100, eg:50
-    */
-    //% subcategory=Motor
-    //% blockId=Motor_servo360CON block="servo360 pin|%pin |direction %dir|speed %speed"
-    //% speed.min=0 speed.max=100
-    export function servo360CON(pin: Servo360, dir: MotorDirection, speed: number): void {
-	let speedforward = (speed * 90) / 100 + 90, speedreverse = 90 - (speed * 90) / 100
-	switch (pin) {
-            case Servo360.Servo0:
-		switch (dir) {
-		    case Motordirection:Forward:
-			pins.servoWritePin(pin, speedforward)
-			break
-		    case Motordirection:Reverse:
-			pins.servoWritePin(pin, speedreverse)
-			break
-		}
-            case Servo360.Servo1:
-		switch (dir) {
-		    case Motordirection:Forward:
-			pins.servoWritePin(pin, speedforward)
-			break
-		    case Motordirection:Reverse:
-			pins.servoWritePin(pin, speedreverse)
-			break
-		}
-            case Servo360.Servo2):
-		switch (dir) {
-		    case Motordirection:Forward:
-			pins.servoWritePin(pin, speedforward)
-			break
-		    case Motordirection:Reverse:
-			pins.servoWritePin(pin, speedreverse)
-			break
-		}
-            case Servo360.Servo3:
-		switch (dir) {
-		    case Motordirection:Forward:
-			pins.servoWritePin(pin, speedforward)
-			break
-		    case Motordirection:Reverse:
-			pins.servoWritePin(pin, speedreverse)
-			break
-		}
-		break;
-            case Servo360.Servo4:
-		switch (dir) {
-		    case Motordirection:Forward:
-			pins.servoWritePin(pin, speedforward)
-			break
-		    case Motordirection:Reverse:
-			pins.servoWritePin(pin, speedreverse)
-			break
-		}
-            case Servo360.Servo10:
-		switch (dir) {
-		    case Motordirection:Forward:
-			pins.servoWritePin(pin, speedforward)
-			break
-		    case Motordirection:Reverse:
-			pins.servoWritePin(pin, speedreverse)
-			break
-		}
-	}
-
- 
-   }
 
 }
