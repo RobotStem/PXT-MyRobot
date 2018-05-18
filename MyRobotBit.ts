@@ -1,17 +1,17 @@
 //% weight=50 color="#31C7D5" weight=10 icon="\uf11e"
 
-namespace MyRoboStem {
+namespace MyRobotBit {
 	/************************************************************************************************************************************************
 	* Robot<>Stem<>Project<>micro:bit 
 	************************************************************************************************************************************************/
     export enum Motors {
-        //% blockId=MyRobotBit_motor_A
+        //% blockId=Motor_motor_A
         //% block="motor A"
         MotorA,
-        //% blockId=MyRobotBit_motor_B
+        //% blockId=Motor_motor_B
         //% block="motor B"
         MotorB,
-        //% blockId=MyRobotBit_motor_AB
+        //% blockId=Motor_motor_AB
         //% block="motor AB"
         MotorAB
     }
@@ -52,46 +52,46 @@ namespace MyRoboStem {
     }
 
    export enum Servo {
-	//% block="P0"
+	//% block="0"
 	Servo0,
-	//% block="P1"
+	//% block="1"
 	Servo1,
-	//% block="P2"
+	//% block="2"
 	Servo2,
-	//% block="P3"
+	//% block="3"
 	Servo3,
-	//% block="P4"
+	//% block="4"
 	Servo4,
-	//% block="P10"
+	//% block="10"
 	Servo10,
-	//% block="P5"
+	//% block="5"
 	Servo5,
-	//% block="P6"
+	//% block="6"
 	Servo6,
-	//% block="P7"
+	//% block="7"
 	Servo7,
-	//% block="P8"
+	//% block="8"
 	Servo8,
-	//% block="P9"
+	//% block="9"
 	Servo9,
-	//% block="P11"
+	//% block="11"
 	Servo11,
-	//% block="P12"
+	//% block="12"
 	Servo12
     }
 
    export enum Servo360 {
 	//% block="0"
 	Servo0,
-	//% block="P1"
+	//% block="1"
 	Servo1,
-	//% block="P2"
+	//% block="2"
 	Servo2,
-	//% block="P3"
+	//% block="3"
 	Servo3,
-	//% block="P4"
+	//% block="4"
 	Servo4,
-	//% block="P10"
+	//% block="10"
 	Servo10
     }
 
@@ -102,8 +102,8 @@ namespace MyRoboStem {
 	 * @param dir   which direction to go
 	 * @param speed which slow/fast to spin the motor, eg:50
      */
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_motor_on
+    //% subcategory=Motor
+    //% blockId=Motor_motor_on
     //% block="%motor|direction %dir|speed %speed"
     //% speed.min=0 speed.max=100
     export function motorOn(motor: Motors, dir: MotorDirection, speed: number): void {
@@ -156,8 +156,8 @@ namespace MyRoboStem {
      * Turns off the motor
      * @param motor which motor to turn off
      */
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_motor_off
+    //% subcategory=Motor
+    //% blockId=Motor_motor_off
     //% block="%motor|Stop %StopMode|mode"
     export function motorOFF(motor: Motors, stop: StopMode): void {
         switch (motor) {
@@ -209,25 +209,25 @@ namespace MyRoboStem {
 	 * @param speed speed of motor; eg: 50
 	 * @param delay seconde delay to stop; eg: 1
 	*/
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_rotateDelay block="rotate|%index|speed %speed|delay %delay|sec"
+    //% subcategory=Motor
+    //% blockId=Motor_rotateDelay block="rotate|%index|speed %speed|delay %delay|sec"
     //% speed.min=0 speed.max=100
     //% delay.min=0 delay.max=10
     export function RotateDelay(index: Rotated, speed: number, delay: number): void {
       let motorspeed = pins.map(speed,0,100,0,1023)      
 	switch (index) {
             case Rotated.Left:
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorA, MyRoboStem.MotorDirection.Reverse, speed)
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorB, MyRoboStem.MotorDirection.Forward, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorA, MyRobotBit.MotorDirection.Reverse, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorB, MyRobotBit.MotorDirection.Forward, speed)
 		basic.pause(delay*1000)
-		MyRoboStem.motorOFF(MyRoboStem.Motors.MotorAB, MyRoboStem.StopMode.Coast)
+		MyRobotBit.motorOFF(MyRobotBit.Motors.MotorAB, MyRobotBit.StopMode.Coast)
 		break
 
             case Rotated.Right:
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorA, MyRoboStem.MotorDirection.Forward, speed)
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorB, MyRoboStem.MotorDirection.Reverse, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorA, MyRobotBit.MotorDirection.Forward, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorB, MyRobotBit.MotorDirection.Reverse, speed)
 		basic.pause(delay*1000)
-		MyRoboStem.motorOFF(MyRoboStem.Motors.MotorAB, MyRoboStem.StopMode.Coast)
+		MyRobotBit.motorOFF(MyRobotBit.Motors.MotorAB, MyRobotBit.StopMode.Coast)
 		break
         }
     }
@@ -238,24 +238,24 @@ namespace MyRoboStem {
 	 * @param speed speed of motor; eg: 50
 	 * @param pausems milliseconde delay to stop; eg: 400
 	*/
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_rotatePAUSE block="rotate|%index|speed %speed|pause %pause|mS"
+    //% subcategory=Motor
+    //% blockId=Motor_rotatePAUSE block="rotate|%index|speed %speed|pause %pause|mS"
     //% speed.min=0 speed.max=100
     export function RotatePAUSE(index: RotatedmS, speed: number, pausems: number): void {
       let motorspeed = pins.map(speed,0,100,0,1023)      
 	switch (index) {
             case RotatedmS.Left:
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorA, MyRoboStem.MotorDirection.Reverse, speed)
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorB, MyRoboStem.MotorDirection.Forward, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorA, MyRobotBit.MotorDirection.Reverse, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorB, MyRobotBit.MotorDirection.Forward, speed)
 		basic.pause(pausems)
-		MyRoboStem.motorOFF(MyRoboStem.Motors.MotorAB, MyRoboStem.StopMode.Coast)
+		MyRobotBit.motorOFF(MyRobotBit.Motors.MotorAB, MyRobotBit.StopMode.Coast)
 		break
 
             case RotatedmS.Right:
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorA, MyRoboStem.MotorDirection.Forward, speed)
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorB, MyRoboStem.MotorDirection.Reverse, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorA, MyRobotBit.MotorDirection.Forward, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorB, MyRobotBit.MotorDirection.Reverse, speed)
 		basic.pause(pausems)
-		MyRoboStem.motorOFF(MyRoboStem.Motors.MotorAB, MyRoboStem.StopMode.Coast)
+		MyRobotBit.motorOFF(MyRobotBit.Motors.MotorAB, MyRobotBit.StopMode.Coast)
 		break
         }
     }
@@ -265,19 +265,19 @@ namespace MyRoboStem {
 	 * @param indexfl Turn Index Left or Right
 	 * @param speed speed of motor; eg: 40
 	*/
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_followlineTurn block="turn|%indexfl|speed %speed"
+    //% subcategory=Motor
+    //% blockId=Motor_followlineTurn block="turn|%indexfl|speed %speed"
     //% speed.min=0 speed.max=100
     export function followlineTurn(indexfl: Turn, speed: number): void {
       let motorspeed = pins.map(speed,0,100,0,1023)      
 	switch (indexfl) {
             case Turn.Left:
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorA, MyRoboStem.MotorDirection.Forward, 0)
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorB, MyRoboStem.MotorDirection.Forward, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorA, MyRobotBit.MotorDirection.Forward, 0)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorB, MyRobotBit.MotorDirection.Forward, speed)
 		break
             case Turn.Right:
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorA, MyRoboStem.MotorDirection.Forward, speed)
-		MyRoboStem.motorOn(MyRoboStem.Motors.MotorB, MyRoboStem.MotorDirection.Forward, 0)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorA, MyRobotBit.MotorDirection.Forward, speed)
+		MyRobotBit.motorOn(MyRobotBit.Motors.MotorB, MyRobotBit.MotorDirection.Forward, 0)
 		break
         }
     }
@@ -286,9 +286,9 @@ namespace MyRoboStem {
 	 * Execute puase time
 	 * @param pausetime  mSec number  to delay; eg: 100
 	*/
-    //% subcategory=MyRobotBit
+    //% subcategory=Motor
     //% pausetime.min=1 pausetime.max=10000
-    //% blockId=MyRobotBit_TimePAUSE block="pause|%pausetime|mSec"
+    //% blockId=Motor_TimePAUSE block="pause|%pausetime|mSec"
     export function TimePAUSE(pausetime: number): void {
 		basic.pause(pausetime)
         }
@@ -297,9 +297,9 @@ namespace MyRoboStem {
 	 * Execute delay time
 	 * @param delaytime   Seconde number to delay; eg: 1
 	*/
-    //% subcategory=MyRobotBit
+    //% subcategory=Motor
     //% delaytime.min=1 delaytime.max=10
-    //% blockId=MyRobotBit_TimeDELAY block="delay|%delaytime|Sec"
+    //% blockId=Motor_TimeDELAY block="delay|%delaytime|Sec"
     export function TimeDELAY(delaytime: number): void {
 		basic.pause(delaytime*1000)
         }
@@ -309,8 +309,8 @@ namespace MyRoboStem {
      * @param indexSV  Select servo number to control
      * @param degree   Servo degree 0-180, eg: 90
      */
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_servoDEGREE block="servo|%indexSV|degree %degree"
+    //% subcategory=Motor
+    //% blockId=Motor_servoDEGREE block="servo|%indexSV|degree %degree"
     //% degree.min=0 degree.max=180
     export function servoDEGREE(indexSV: Servo, degree: number): void {
 	switch (indexSV) {
@@ -360,8 +360,8 @@ namespace MyRoboStem {
      * Control Servo GPIO0 to GPIO12 to Stop
      * @param indexSVstop  Select servo number to control
      */
-    //% subcategory=MyRobotBit
-    //% blockId=MyRobotBit_servoSTOP block="servo stop|%indexSVstop"
+    //% subcategory=Motor
+    //% blockId=Motor_servoSTOP block="servo stop|%indexSVstop"
     export function servoSTOP(indexSVstop: Servo): void {
 	switch (indexSVstop) {
             case Servo.Servo0:
@@ -405,5 +405,77 @@ namespace MyRoboStem {
 		break
 	}
     }
+
+   /**
+    * Servo360 direction, with a speed from 0 to 100
+    * @param pin   Which pin the servo is on
+    * @param dir   which direction of servo
+    * @param speed Speed between 0 to 100, eg:50
+    */
+    //% subcategory=Motor
+    //% blockId=Motor_servo360CON block="servo360 pin|%pin |direction %dir|speed %speed"
+    //% speed.min=0 speed.max=100
+    export function servo360CON(pin: Servo360, dir: MotorDirection, speed: number): void {
+	let speedforward = (speed * 90) / 100 + 90, speedreverse = 90 - (speed * 90) / 100
+	switch (pin) {
+            case Servo360.Servo0:
+		switch (dir) {
+		    case Motordirection:Forward:
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+            case Servo360.Servo1:
+		switch (dir) {
+		    case Motordirection:Forward:
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+            case Servo360.Servo2):
+		switch (dir) {
+		    case Motordirection:Forward:
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+            case Servo360.Servo3:
+		switch (dir) {
+		    case Motordirection:Forward:
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+		break;
+            case Servo360.Servo4:
+		switch (dir) {
+		    case Motordirection:Forward:
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+            case Servo360.Servo10:
+		switch (dir) {
+		    case Motordirection:Forward:
+			pins.servoWritePin(pin, speedforward)
+			break
+		    case Motordirection:Reverse:
+			pins.servoWritePin(pin, speedreverse)
+			break
+		}
+	}
+
+ 
+   }
 
 }
