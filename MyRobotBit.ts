@@ -1,4 +1,4 @@
-//% weight=50 color="#31C7D5" weight=10 icon="\uf11e"
+//% weight=50 color="#ff6600" weight=10 icon="\uf11e"
 
 namespace MyRobotBit {
 	/************************************************************************************************************************************************
@@ -52,46 +52,46 @@ namespace MyRobotBit {
     }
 
    export enum Servo {
-	//% block="0"
+	//% block="P0"
 	Servo0,
-	//% block="1"
+	//% block="P1"
 	Servo1,
-	//% block="2"
+	//% block="P2"
 	Servo2,
-	//% block="3"
+	//% block="P3"
 	Servo3,
-	//% block="4"
+	//% block="P4"
 	Servo4,
-	//% block="10"
+	//% block="P10"
 	Servo10,
-	//% block="5"
+	//% block="P5"
 	Servo5,
-	//% block="6"
+	//% block="P6"
 	Servo6,
-	//% block="7"
+	//% block="P7"
 	Servo7,
-	//% block="8"
+	//% block="P8"
 	Servo8,
-	//% block="9"
+	//% block="P9"
 	Servo9,
-	//% block="11"
+	//% block="P11"
 	Servo11,
-	//% block="12"
+	//% block="P12"
 	Servo12
     }
 
    export enum Servo360 {
-	//% block="0"
+	//% block="P0"
 	Servo0,
-	//% block="1"
+	//% block="P1"
 	Servo1,
-	//% block="2"
+	//% block="P2"
 	Servo2,
-	//% block="3"
+	//% block="P3"
 	Servo3,
-	//% block="4"
+	//% block="P4"
 	Servo4,
-	//% block="10"
+	//% block="P10"
 	Servo10
     }
 
@@ -261,9 +261,9 @@ namespace MyRobotBit {
     }
 
 	/**
-	 * Execute turn direction with dual motors for follow line robot.
-	 * @param indexfl Turn Index Left or Right
-	 * @param speed speed of motor; eg: 40
+	 * Turn direction with dual motors for line follow robot.
+	 * @param indexfl  Turn Index Left or Right
+	 * @param speed    speed of motor; eg: 40
 	*/
     //% subcategory=Motor
     //% blockId=Motor_followlineTurn block="turn|%indexfl|speed %speed"
@@ -305,7 +305,7 @@ namespace MyRobotBit {
         }
 
     /**
-     * Control Servo GPIO0 to GPIO12 degree 0 - 180
+     * Control Servo 0 - 180 degree 
      * @param indexSV  Select servo number to control
      * @param degree   Servo degree 0-180, eg: 90
      */
@@ -357,7 +357,7 @@ namespace MyRobotBit {
     }
 
     /**
-     * Control Servo GPIO0 to GPIO12 to Stop
+     * Servo stop
      * @param indexSVstop  Select servo number to control
      */
     //% subcategory=Servo
