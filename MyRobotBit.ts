@@ -58,7 +58,7 @@ namespace MyRoboStem {
 	Servo1,
 	//% block="P2"
 	Servo2,
-	//% block="3"
+	//% block="P3"
 	Servo3,
 	//% block="P4"
 	Servo4,
