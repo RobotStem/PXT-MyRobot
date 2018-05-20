@@ -1,18 +1,17 @@
 {
-    "name": "MyRobotBit",
-    "version": "1.1.0",
-    "description": "MyRobotBit package for pxt-microbit",
+    "name": "pxt-sonar",
+    "version": "0.0.4",
+    "description": "A MakeCode package to use sonar sensors",
     "license": "MIT",
     "dependencies": {
-        "core": "*"        
+        "core": "*"
     },
     "files": [
         "README.md",
-        "MyRobotBit.ts"        
+        "main.ts"
     ],
     "testFiles": [
-        "tests.ts"
+        "test.ts"
     ],
-    "yotta": {},
     "public": true
 }

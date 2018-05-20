@@ -1,8 +1,8 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "noImplicitAny": true,
-    "outDir": "built",
-    "rootDir": "."
-  }
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": true,
+        "outDir": "built",
+        "rootDir": "."
+    }
 }
