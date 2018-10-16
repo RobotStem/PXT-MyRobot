@@ -350,6 +350,7 @@ namespace MyRobotBit {
             case Servo.Servo12:
 	        pins.servoWritePin(AnalogPin.P12, degree)
 	}
+	break
     }
 
     /**
